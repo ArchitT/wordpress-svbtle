@@ -1,5 +1,7 @@
 <?php
 
+remove_action ('wp_head', 'wp_generator');
+
 function main_css()  
 {
 	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), '20120417', 'all' );
