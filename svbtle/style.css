@@ -71,6 +71,7 @@ p{font-size:15px;line-height:25px;margin-top:20px;margin-bottom:20px;color:#4d4d
 h1,h2,h3,h4,h5,h6{color:#3a3a3a;margin-top:30px;margin-bottom:25px}
 h1{font-size:28px}
 h2{font-size:23px;font-weight:600}
+article#archive h2{color:#595d61;text-decoration:none;font-family:'proxima-nova',Helvetica,sans-serif;font-size:18px;line-height:25px;font-weight:300}
 h3{font-size:20px;font-weight:600}
 h4{font-size:20px;font-weight:400;color:#777}
 h5{font-size:17px;font-weight:400;color:#777}
