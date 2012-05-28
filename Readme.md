@@ -1,7 +1,7 @@
 # wordpress-svbtle
 #### Svbtle.com inspired Wordpress theme
 
-All animations and "kudos" work!  
+First theme to have all animations and "kudos" working!
 
 ## Quick Start
 Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [download the latest release](https://github.com/scavone/wordpress-svbtle/zipball/master)
@@ -16,18 +16,23 @@ Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [dow
 * Theme settings
 * Choose your own logo or pick one that is provided
 * Featured post images displayed on the index page
+* Templates for single post, pages, categories
+* Comments are now activated
 
 ## Screenshots 
 
 ![main][1]
 
-![options][2]
+![comments][2]
 
-![header][3]
+![options][3]
+
+![header][4]
 
  [1]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_main.png
- [2]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_options.png 
- [3]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_header.png 
+ [2]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_comments.png
+ [3]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_options.png 
+ [4]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_header.png 
 
 
 ## Bug tracker
