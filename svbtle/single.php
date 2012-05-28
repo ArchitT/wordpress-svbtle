@@ -18,7 +18,11 @@
 				</a>
 				<div class="pbar"><div class="progress">&nbsp;</div></div>
 			</figure>
-			<h1><?php //echo get_the_category_list(', '); ?></h1>
+			<h2><?php //echo get_the_category_list(', '); ?></h2>
+			<h2><?php //comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></h2>
+			<div class="comments-template">
+                <?php comments_template(); ?>
+            </div>
 		</article>
 <?php endwhile; ?>
 <footer id="paginate">

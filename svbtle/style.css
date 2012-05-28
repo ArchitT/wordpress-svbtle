@@ -223,3 +223,14 @@ figure.filling div.pbar{display:block;height:30px;top:80px;left:15px;right:25px;
 figure div.pbar div.progress{position:absolute;left:0;right:100%;height:30px;background-color:#000;border-radius:30px;-webkit-transition-property:all;-webkit-transition-duration:.8s;-webkit-transition-timing-function:linear;-moz-transition-property:all;-moz-transition-duration:.8s;-moz-transition-timing-function:linear}
 figure.filling div.pbar div.progress{right:0}
 }
+ul.content { width: 100%; position: relative; display: block; clear: both; } ul.content li.text_field { position: relative; display: block; clear: both; } ul.content.form li { padding-bottom: 10px; padding-top: 10px; } ul.content li { border-top: 1px solid #DBDBDB; position: relative; -webkit-transition-property: all; -webkit-transition-duration: .1s; -webkit-transition-timing-function: linear; -moz-transition-property: all; -moz-transition-duration: .1s; -moz-transition-timing-function: linear; line-height: 0px; margin-left: 0px; } li { display: list-item; text-align: -webkit-match-parent; } ul.content.form.comment li.text_field input, ul.content.form.comment textarea { padding-bottom: 10px; padding-top: 10px; font-size: 20px; } ul.content.form li.text_field input, ul.content.form li.text_field textarea { padding-bottom: 15px; font-size: 20px; -webkit-font-smoothing: antialiased; padding-top: 5px; } ul.content li.text_field input, ul.content li.text_field textarea { font-size: 23px; color: black; border: none; font-weight: 400; letter-spacing: 0; padding-left: 7px; padding: 25px; padding-left: 38px; display: block; width: 385px; background: transparent; } 
+ul.content li.text_field div.insertion_point{display:none}
+ul.content li.text_field.active div.insertion_point{height:28px;width:5px;display:block;position:absolute;left:25px;top:23px;border-left:5px solid #00a2ff}
+ul.content li.text_field.required div.insertion_point{height:28px;width:5px;display:block;position:absolute;left:25px;top:23px;border-left:5px solid red}
+ul.content li.text_field.required.active div.insertion_point{height:28px;width:5px;display:block;position:absolute;left:25px;top:23px;border-left:5px solid #00a2ff}
+ul.content li.text_field.area.active div.insertion_point{}
+ul.content li.text_field.active.labeled div.insertion_point{}
+ul.content li.text_field.active.idea_text div.insertion_point{top:22px}
+ul.content li.text_field.active.metadata div.insertion_point{top:12px;height:23px}
+textarea:focus, input:focus{     outline: none; }
+input#submit{ border: none 0px; background-color: black; border-radius: 3px; padding: 15px; padding-left: 25px; padding-right: 25px; color: white; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; font-size: 21px; }

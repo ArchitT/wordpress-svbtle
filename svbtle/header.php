@@ -8,7 +8,13 @@
   <link href="<?php bloginfo('rss2_url'); ?>" rel="alternate" title="<?php _e('RSS'); ?>" type="application/rss+xml" />
 	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-precomposed.png" />
   <?php add_action( 'wp_enqueue_scripts', 'main_css' );  ?>
-  <?php wp_head(); ?>
+  <?php  if ( is_singular() && get_option( 'thread_comments' ) )
+        wp_enqueue_script( 'comment-reply' );
+ 
+    wp_head();
+ 
+    //wp_get_archives('type=monthly&format=link'); ?>
+  <?php comments_popup_script(); ?>
 	<?php $options = get_option ( 'svbtle_options' ); ?>
   <?php echo $options['google_analytics'];?>
 

@@ -202,4 +202,8 @@
     }), a("a.kudos").live("touchend", function(b) {
         k = a(this), m(k), b.preventDefault()
     })
-}(jQuery);
+}(jQuery), $("input.pane_input, textarea.pane_input").bind("focus", function() {
+    $("li.text_field").removeClass("active"), $(this).parent("li.text_field").addClass("active")
+}), $("input.pane_input, textarea.pane_input").bind("blur", function() {
+    $("li.text_field").removeClass("active"), $("li.text_field").first().addClass("active")
+});
