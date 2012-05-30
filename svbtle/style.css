@@ -131,6 +131,7 @@ article h2 span.anchor a{border-bottom:none;padding-left:10px;color:#777}
 article p,article h2{width:500px}
 article img,article object,article iframe{margin-top:20px;margin-bottom:15px;margin-left:-50px}
 article img{border-radius:0;border-top-left-radius:0;border-bottom-left-radius:0}
+article img.attachment-single-post-thumbnail.wp-post-image { margin-top:-40px }
 article img.floated{float:left;margin-right:15px;margin-top:15px;margin-bottom:20px}
 article img.nostyle{border:0;float:none;margin:0;border-radius:0}
 section#sidebar h1,section#sidebar h2,ul#linkbar{padding-left:40px}
@@ -223,12 +224,19 @@ figure.filling div.pbar{display:block;height:30px;top:80px;left:15px;right:25px;
 figure div.pbar div.progress{position:absolute;left:0;right:100%;height:30px;background-color:#000;border-radius:30px;-webkit-transition-property:all;-webkit-transition-duration:.8s;-webkit-transition-timing-function:linear;-moz-transition-property:all;-moz-transition-duration:.8s;-moz-transition-timing-function:linear}
 figure.filling div.pbar div.progress{right:0}
 }
-ul.content { width: 100%; position: relative; display: block; clear: both; } ul.content li.text_field { position: relative; display: block; clear: both; } ul.content.form li { padding-bottom: 10px; padding-top: 10px; } ul.content li { border-top: 1px solid #DBDBDB; position: relative; -webkit-transition-property: all; -webkit-transition-duration: .1s; -webkit-transition-timing-function: linear; -moz-transition-property: all; -moz-transition-duration: .1s; -moz-transition-timing-function: linear; line-height: 0px; margin-left: 0px; } li { display: list-item; text-align: -webkit-match-parent; } ul.content.form.comment li.text_field input, ul.content.form.comment textarea { padding-bottom: 10px; padding-top: 10px; font-size: 20px; } ul.content.form li.text_field input, ul.content.form li.text_field textarea { padding-bottom: 15px; font-size: 20px; -webkit-font-smoothing: antialiased; padding-top: 5px; } ul.content li.text_field input, ul.content li.text_field textarea { font-size: 23px; color: black; border: none; font-weight: 400; letter-spacing: 0; padding-left: 7px; padding: 25px; padding-left: 38px; display: block; width: 385px; background: transparent; } 
+p.comment-notes { font-style:italic; }
+ul.content { width: 100%; position: relative; display: block; clear: both; } 
+ul.content li.text_field { position: relative; display: block; clear: both; } 
+ul.content.form li { padding-bottom: 10px; padding-top: 10px; } 
+ul.content li { border-top: 1px solid #DBDBDB; position: relative; margin-bottom:0; -webkit-transition-property: all; -webkit-transition-duration: .1s; -webkit-transition-timing-function: linear; -moz-transition-property: all; -moz-transition-duration: .1s; -moz-transition-timing-function: linear; line-height: 0px; margin-left: 0px; } li { display: list-item; text-align: -webkit-match-parent; } 
+ul.content.form.comment li.text_field input, ul.content.form.comment textarea { padding-bottom: 10px; padding-top: 10px; font-size: 20px; } 
+ul.content.form li.text_field input, ul.content.form li.text_field textarea { padding-bottom: 10px; font-size: 20px; -webkit-font-smoothing: antialiased; padding-top: 10px; } 
+ul.content li.text_field input, ul.content li.text_field textarea { font-size: 23px; color: black; border: none; font-weight: 400; letter-spacing: 0; padding-left: 7px; padding: 25px; padding-left: 38px; display: block; width: 385px; background: transparent; } 
 ul.content li.text_field div.insertion_point{display:none}
-ul.content li.text_field.active div.insertion_point{height:28px;width:5px;display:block;position:absolute;left:25px;top:23px;border-left:5px solid #00a2ff}
-ul.content li.text_field.required div.insertion_point{height:28px;width:5px;display:block;position:absolute;left:25px;top:23px;border-left:5px solid red}
-ul.content li.text_field.required.active div.insertion_point{height:28px;width:5px;display:block;position:absolute;left:25px;top:23px;border-left:5px solid #00a2ff}
-ul.content li.text_field.area.active div.insertion_point{}
+ul.content li.text_field.active div.insertion_point{width:5px;display:block;position:absolute;left:25px;top:10px;bottom:10px;border-left:5px solid #00a2ff}
+ul.content li.text_field.required div.insertion_point{width:5px;display:block;position:absolute;left:25px;top:20px;bottom:20px;border-left:5px solid red}
+ul.content li.text_field.required.active div.insertion_point{width:5px;display:block;position:absolute;left:25px;top:20px;bottom:20px;border-left:5px solid #00a2ff}
+ul.content li.text_field.area.active div.insertion_point{width:5px;display:block;position:absolute;left:25px;top:20px;bottom:20px;border-left:5px solid #00a2ff}
 ul.content li.text_field.active.labeled div.insertion_point{}
 ul.content li.text_field.active.idea_text div.insertion_point{top:22px}
 ul.content li.text_field.active.metadata div.insertion_point{top:12px;height:23px}
