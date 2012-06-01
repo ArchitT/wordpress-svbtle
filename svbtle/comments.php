@@ -27,7 +27,7 @@ $svbtle_comments_args = array(
 'title_reply' => 
 	'Leave a Comment',
 'comment_notes_before' => 
-	'<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? __( ' Required fields are marked in red' ) : '' ) . '</p>',
+	'<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? __( ' Required fields are marked in red.' ) : '' ) . '</p>',
 'comment_field' => 
 	'<li class="text_field labeled area">
 	<textarea class="pane_input" cols="auto" id="comment" name="comment" placeholder="What would you like to say?" 

@@ -4,6 +4,11 @@
 <?php } ?>
 <?php while ( have_posts() ) : the_post() ?>
 		<article id="<?php the_ID(); ?>">
+			<?php 
+				if ( has_post_thumbnail()) {
+					the_post_thumbnail('single-post-thumbnail');
+				} 
+			?>
 			<h2>
 				<a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a>
 				<?php if ( $options['anchor'] ) { ?><span class="anchor"><a href="<?php echo home_url('/'); ?>?p=<?php the_ID(); ?>">&#9875;</a></span><?php } ?>

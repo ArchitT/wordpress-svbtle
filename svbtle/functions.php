@@ -331,7 +331,9 @@ function load_theme_scripts() {
     wp_enqueue_script( 'farbtastic' );
 }
 
-add_theme_support( 'post-thumbnails', array( 'post' ) ); 
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 520, 180, true ); // Normal page thumbnails
+add_image_size( 'single-post-thumbnail', 520, 180 );
 
 function svbtle_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>

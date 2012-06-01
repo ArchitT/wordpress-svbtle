@@ -10,7 +10,7 @@
 			<?php 
 			if ( has_post_thumbnail()) {
 				echo '<a href="' . get_permalink($post->ID) . '" >';
-				the_post_thumbnail('thumbnail');
+				the_post_thumbnail('single-post-thumbnail');
 			  echo '</a>'; 
 			}  else {
 				the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'hbd-theme' )  ); 
