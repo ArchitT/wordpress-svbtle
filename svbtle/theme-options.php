@@ -37,6 +37,12 @@ function theme_options_do_page() {
 
 			<table class="form-table">
 
+				<tr valign="top"><th scope="row"><?php _e( 'Display sidebar cover animation?', 'wordpress-svbtle' ); ?></th>
+					<td>
+						<input id="svbtle_options[cover]" name="svbtle_options[cover]" type="checkbox" value="1" <?php checked( '1', $options['cover'] ); ?> />
+					</td>
+				</tr>
+				
 				<tr valign="top"><th scope="row"><?php _e( 'Display logo pulse animation?', 'wordpress-svbtle' ); ?></th>
 					<td>
 						<input id="svbtle_options[pulse]" name="svbtle_options[pulse]" type="checkbox" value="1" <?php checked( '1', $options['pulse'] ); ?> />
@@ -76,6 +82,10 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input['anchor'] ) )
 		$input['anchor'] = null;
 	$input['anchor'] = ( $input['anchor'] == 1 ? 1 : 0 );
+	
+	if ( ! isset( $input['cover'] ) )
+		$input['cover'] = null;
+	$input['cover'] = ( $input['cover'] == 1 ? 1 : 0 );
 	
 	if ( ! isset( $input['pulse'] ) )
 		$input['pulse'] = null;

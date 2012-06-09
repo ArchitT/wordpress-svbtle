@@ -32,12 +32,14 @@
 </head>
 <body>
 
+<?php if ( $options['cover'] ) { ?>
 <section id="cover" class="fixed">
   <figure id="cover_logo">
     <div class="logo">&nbsp;</div>
   </figure>
   <h1 id="cover_user"><a href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 </section>
+<?php } ?>
 
 <section id="sidebar" class="fixed">
   <figure id="user_logo">
