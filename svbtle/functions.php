@@ -331,6 +331,8 @@ function load_theme_scripts() {
     wp_enqueue_script( 'farbtastic' );
 }
 
+date_default_timezone_set(get_option('timezone_string'));
+
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 520, 180, true ); // Normal page thumbnails
 add_image_size( 'single-post-thumbnail', 520, 180 );
