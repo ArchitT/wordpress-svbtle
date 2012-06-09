@@ -59,8 +59,3 @@
     Original design by <span>Svbtle</span>.
   </a>
 </section>
-
-<section id="posts">
-	<header>
-		<h3 class="date"><?php date_default_timezone_set("America/Chicago"); echo date("F d, Y"); ?></h3>
-	</header>

@@ -1,3 +1,7 @@
+<section id="posts">
+	<header>
+		<h3 class="date"><?php echo date(get_option('date_format')); ?></h3>
+	</header>
 <?php $options = get_option ( 'svbtle_options' ); ?>
 <?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
 <?php } ?>
@@ -10,7 +14,7 @@
 			<?php 
 			if ( has_post_thumbnail()) {
 				echo '<a href="' . get_permalink($post->ID) . '" >';
-				the_post_thumbnail('single-post-thumbnail');
+				the_post_thumbnail('index_thumb');
 			  echo '</a>'; 
 			}  else {
 				the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'hbd-theme' )  ); 
@@ -30,3 +34,4 @@
 <footer id="paginate">
 	<?php content_nav( 'nav-below' ); ?>
 </footer>
+</section>

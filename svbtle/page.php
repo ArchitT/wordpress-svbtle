@@ -1,4 +1,8 @@
 <?php get_header(); ?>
+<section id="posts">
+	<header>
+		<h3 class="date"><?php echo date(get_option('date_format')); ?></h3>
+	</header>
 <?php $options = get_option ( 'svbtle_options' ); ?>
 <?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
 <?php } ?>
@@ -16,4 +20,5 @@
 <footer id="paginate">
 	<?php single_content_nav( 'nav-below' ); ?>
 </footer>
+</section>
 <?php get_footer(); ?>
