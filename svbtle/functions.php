@@ -327,8 +327,10 @@ require_once ( get_stylesheet_directory() . '/theme-options.php' );
 
 add_action('init', 'load_theme_scripts');
 function load_theme_scripts() {
-    wp_enqueue_style( 'farbtastic' );
-    wp_enqueue_script( 'farbtastic' );
+	if ( is_admin() ) {
+	    wp_enqueue_style( 'farbtastic' );
+	    wp_enqueue_script( 'farbtastic' );
+	}
 }
 
 date_default_timezone_set(get_option('timezone_string'));
