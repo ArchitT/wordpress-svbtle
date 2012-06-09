@@ -39,7 +39,7 @@ Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [dow
 
 Have a bug? Please create an issue here on GitHub!
 
-https://github.com/scavone/wordpress-svbtle/issues
+[https://github.com/scavone/wordpress-svbtle/issues](https://github.com/scavone/wordpress-svbtle/issues)
 
 
 
