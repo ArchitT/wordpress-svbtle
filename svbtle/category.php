@@ -38,7 +38,7 @@
 		</article>
 <?php endwhile; ?>
 <footer id="paginate">
-	<?php single_content_nav( 'nav-below' ); ?>
+	<?php content_nav( 'nav-below' ); ?>
 </footer>
 </section>
 <?php get_footer(); ?>
