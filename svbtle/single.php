@@ -14,8 +14,7 @@
 				} 
 			?>
 			<h2>
-				<a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a>
-				<?php if ( $options['anchor'] ) { ?><span class="anchor"><a href="<?php echo home_url('/'); ?>?p=<?php the_ID(); ?>">&#9875;</a></span><?php } ?>
+				<?php print_post_title() ?>
 			</h2>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'hbd-theme' )  ); ?>
 			<?php $kudos = get_post_meta($post->ID, '_wp-svbtle-kudos', true); 

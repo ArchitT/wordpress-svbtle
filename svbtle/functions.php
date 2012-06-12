@@ -287,7 +287,36 @@ function theme_admin_header_image() {
     <?php
 }
 
+function print_post_title() {
+	global $post;
+	$thePostID = $post->ID;
+	$post_id = get_post($thePostID);
+	$title = $post_id->post_title;
+	$perm = get_permalink($post_id);
+	$post_keys = array(); 
+	$post_val = array();
+	$post_keys = get_post_custom_keys($thePostID);
 
+	if (!empty($post_keys)) {
+		foreach ($post_keys as $pkey) {
+			if ($pkey=='wp_svbtle_external_url') {
+				$post_val = get_post_custom_values($pkey);
+			}
+		}
+		if (empty($post_val)) {
+			$link = $perm;
+			$class = "class=no-link";
+		} else {
+			$link = $post_val[0];
+			$class = "";
+			$anchor = "<span class=anchor><a href='$perm'>&#9875;</a></span>";
+		}
+	} else {
+		$link = $perm;
+		$class = "class=no-link";
+	}
+	echo '<a href="'.$link.'" '.$class.'>'.$title.'</a>'.$anchor;
+}
 
 /*function widgets_init() {
 	register_sidebar(array(

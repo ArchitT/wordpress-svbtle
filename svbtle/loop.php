@@ -8,8 +8,7 @@
 <?php while ( have_posts() ) : the_post() ?>
 		<article id="<?php the_ID(); ?>">
 			<h2>
-				<a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a>
-				<?php if ( $options['anchor'] ) { ?><span class="anchor"><a href="<?php echo home_url('/'); ?>?p=<?php the_ID(); ?>">&#9875;</a></span><?php } ?>
+				<?php print_post_title() ?>
 			</h2>
 			<?php 
 			if ( has_post_thumbnail()) {
