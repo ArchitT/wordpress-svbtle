@@ -63,7 +63,7 @@ td{vertical-align:top}
 .hidden{display:none}
 ul{list-style-type:none;list-style-position:outside}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-body{background-color:#fff;color:#000;font-family:'proxima-nova',Helvetica,sans-serif;padding:0;border:0;margin:0;position:relative;display:block}
+body{background-color:#fff;color:#000;font-family:'proxima-nova',Arial,Helvetica,sans-serif;padding:0;border:0;margin:0;position:relative;display:block}
 a,a:link,a:visited,a:active{color:#000;text-decoration:none;border-bottom:1px solid #ccc}
 a.anchor,a.anchor:visited{color:#777;border:none;padding-left:10px}
 a:hover{color:#f00}
@@ -122,21 +122,21 @@ section#cover.perform{display:block;margin-left:-268px}
 section#cover.animate{-webkit-transition-property:margin,width,height,color;-webkit-transition-duration:1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-property:margin,width,height,color;-moz-transition-duration:1s;-moz-transition-timing-function:ease-in-out;-webkit-transform:translateZ(0)}
 section#sidebar.absolute,section#cover.absolute{position:absolute}
 section#posts header{padding:40px;padding-left:50px}
-h3.date{margin-top:10px;margin-bottom:5px;text-transform:uppercase;color:black;font-weight:700;font-size:14px;letter-spacing:1px;line-height:33px}
+h3.date{margin-top:10px;margin-bottom:5px;text-transform:uppercase;color:black;font-weight:700;font-size:16px;letter-spacing:1px;line-height:33px;font-family:"freight-sans-pro",sans-serif;}
 article{padding:40px;padding-left:50px;border-top:1px solid #e2e2e2;position:relative;overflow:hidden}
 article p:first-child{margin-top:0}
 article h2{margin-top:20px}
-article h2 a{color:black;text-decoration:none;border-bottom:1px solid #CCC;font-family:'ff-meta-web-pro',sans-serif;font-size:20px;line-height:36px;font-weight:700}
-article h2 a.no-link{border:none;font-size:30px;line-height:40px}
+article h2 a{color:black;text-decoration:none;border-bottom:1px solid #CCC;font-family:'freight-sans-pro',sans-serif;font-size:20px;line-height:36px;font-weight:700;-webkit-font-smoothing: antialiased;}
+article h2 a.no-link{border:none;font-size:30px;line-height:38px}
 article h2 span.anchor a{border-bottom:none;padding-left:10px;color:#777}
 article p,article h2{width:500px}
 article img,article object,article iframe{margin-top:20px;margin-bottom:15px;margin-left:-50px}
-article img{border-radius:0;border-top-left-radius:0;border-bottom-left-radius:0}
+article img{border-radius:0;border-top-left-radius:0;border-bottom-left-radius:0;margin-left:0px}
 /* Featured Image CSS */
-article img.attachment-single-post-thumbnail.wp-post-image { margin-top:-40px }
+/*article img.attachment-single-post-thumbnail.wp-post-image { margin-top:-40px }*/
 article img.floated{float:left;margin-right:15px;margin-top:15px;margin-bottom:20px}
 article img.nostyle{border:0;float:none;margin:0;border-radius:0}
-section#sidebar h1,section#sidebar h2,ul#linkbar{padding-left:40px}
+section#sidebar h1,section#sidebar h2,ul#linkbar{padding-left:35px}
 section#sidebar h1{margin-bottom:10px}
 section#sidebar h1 a{font-family:"freight-sans-pro",sans-serif;font-weight:900;font-size:38px;line-height:60px;border:none;display:block;margin-top:180px;margin-bottom:0}
 section#sidebar h1 a.long{font-size:30px}
