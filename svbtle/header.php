@@ -19,15 +19,11 @@
   <?php echo $options['google_analytics'];?>
 
 <style type="text/css">
-	a:hover { color: <?php echo $options['color']; ?>;}
-	nav.pagination span.next a, footer#paginate a.back_to_blog { border-color: <?php echo $options['color']; ?>; color: <?php echo $options['color']; ?>;}
-	section#posts.preview header h2 {color: <?php echo $options['color']; ?>;}		
+	a:hover,h2 a:hover,a.back_to_blog,span.next a,span.prev a,header h2,article blockquote { border-color: <?php echo $options['color']; ?>; color: <?php echo $options['color']; ?>;}
+	a.back_to_blog:hover,span.next a:hover,span.prev a:hover,section#cover, figure#user_logo div.logo { background-color: <?php echo $options['color']; ?>;}
+	::-moz-selection,::selection { background-color: <?php echo $options['color']; ?>}
 	div.pullback a {color: <?php echo $options['color']; ?>; border-color: <?php echo $options['color']; ?>;}
-	article blockquote, figure#user_logo div.pulse { border-color: <?php echo $options['color']; ?>;}
-		
-	nav.pagination span.next a:hover, nav.pagination span.prev a:hover, footer#paginate a.back_to_blog:hover,  div.pullback a:hover{border-color:<?php echo $options['color']; ?>;background-color: <?php echo $options['color']; ?>;}
-	section#cover, figure#user_logo div.logo{background-color: <?php echo $options['color']; ?>;}
-	::-moz-selection,::selection { background: <?php echo $options['color']; ?>; color: #fff; text-shadow: none; }
+	figure#user_logo div.pulse { border-color: <?php echo $options['color']; ?>;}
 </style>
 </head>
 <body>

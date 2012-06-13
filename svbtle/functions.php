@@ -279,6 +279,7 @@ function theme_header_style() {
 }
 function theme_admin_header_style() {
     ?><style type="text/css">
+        article a.kudos.completed div.circle div.filled {background-image: url(<?php header_image(); ?>)}
         figure#user_logo div.logo, article a.kudos.completed div.circle div.filled, figure#cover_logo{background-image: url(<?php header_image(); ?>);}
     </style><?php
 }
@@ -366,7 +367,7 @@ date_default_timezone_set(get_option('timezone_string'));
 
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 520, 180, true ); // Normal page thumbnails
-add_image_size( 'single-post-thumbnail', 520, 180 );
+add_image_size( 'single-post-thumbnail', 520, 180, true );
 
 function svbtle_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
