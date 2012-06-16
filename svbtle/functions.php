@@ -300,7 +300,7 @@ function print_post_title() {
 
 	if (!empty($post_keys)) {
 		foreach ($post_keys as $pkey) {
-			if ($pkey=='wp_svbtle_external_url') {
+			if ($pkey=='_wp_svbtle_external_url') {
 				$post_val = get_post_custom_values($pkey);
 			}
 		}
@@ -353,9 +353,62 @@ function register_custom_menu() {
 add_action('init', 'register_custom_menu');
 
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
+add_action( 'load-post.php', 'svbtle_post_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'svbtle_post_meta_boxes_setup' );
 
+add_action( 'load-post.php', 'svbtle_post_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'svbtle_post_meta_boxes_setup' );
+
+function svbtle_post_meta_boxes_setup() {
+	add_action( 'add_meta_boxes', 'svbtle_add_post_meta_boxes' );
+	add_action( 'save_post', 'svbtle_save_post_class_meta', 10, 2 );
+}
+
+function svbtle_add_post_meta_boxes() {
+	add_meta_box(
+		'svbtle-post-class',
+		esc_html__( 'Extra options for Post', 'example' ),
+		'_wp_svbtle_external_url_meta_box',
+		'post',
+		'side',
+		'core'
+	);
+}
+
+function _wp_svbtle_external_url_meta_box( $object, $box ) { ?>
+	<?php wp_nonce_field( basename( __FILE__ ), '_wp_svbtle_external_url_nonce' ); ?>
+	<p>
+		<label for="svbtle-post-class"><?php _e( "Click Through URL on Post Title:", 'example' ); ?></label>
+		<br />
+		<input class="widefat" type="text" name="svbtle-post-class" id="svbtle-post-class" value="<?php echo esc_attr( get_post_meta( $object->ID, '_wp_svbtle_external_url', true ) ); ?>" size="30" />
+	</p>
+<?php }
+
+function svbtle_save_post_class_meta( $post_id, $post ) {
+
+	if ( !isset( $_POST['_wp_svbtle_external_url_nonce'] ) || !wp_verify_nonce( $_POST['_wp_svbtle_external_url_nonce'], basename( __FILE__ ) ) )
+		return $post_id;
+
+	$post_type = get_post_type_object( $post->post_type );
+
+	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+		return $post_id;
+
+	$new_meta_value = ( isset( $_POST['svbtle-post-class'] ) ? esc_url_raw( $_POST['svbtle-post-class'] ) : '' );
+
+	$meta_key = '_wp_svbtle_external_url';
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+	if ( $new_meta_value && '' == $meta_value )
+		add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+	elseif ( $new_meta_value && $new_meta_value != $meta_value )
+		update_post_meta( $post_id, $meta_key, $new_meta_value );
+	elseif ( '' == $new_meta_value && $meta_value )
+		delete_post_meta( $post_id, $meta_key, $meta_value );
+}
 
 add_action('init', 'load_theme_scripts');
+
 function load_theme_scripts() {
 	if ( is_admin() ) {
 	    wp_enqueue_style( 'farbtastic' );
