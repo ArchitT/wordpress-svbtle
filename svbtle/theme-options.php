@@ -4,7 +4,7 @@ add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' );
 
 function theme_options_init(){
-	register_setting( 'sample_options', 'svbtle_options', 'theme_options_validate' );
+	register_setting( 'sample_options', 'svbtle_options');
 }
 
 function theme_options_add_page() {
@@ -33,7 +33,12 @@ function theme_options_do_page() {
 
 		<form method="post" action="options.php">
 			<?php settings_fields( 'sample_options' ); ?>
-			<?php $options = get_option( 'svbtle_options' ); ?>
+			<?php $options = get_option( 'svbtle_options' );
+			 	if( ! is_null( $options['color'] ) && '' != $options['color'] )
+					$color = esc_attr( $options['color'] );
+				else
+					$color = '#000000';
+				?>
 
 			<table class="form-table">
 
@@ -49,15 +54,9 @@ function theme_options_do_page() {
 					</td>
 				</tr>
 				
-				<tr valign="top"><th scope="row"><?php _e( 'Display anchors?', 'wordpress-svbtle' ); ?></th>
-					<td>
-						<input id="svbtle_options[anchor]" name="svbtle_options[anchor]" type="checkbox" value="1" <?php checked( '1', $options['anchor'] ); ?> />
-					</td>
-				</tr>
-
 				<tr valign="top"><th scope="row"><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></th>
 					<td>
-						<input id="color1" class="regular-text" type="text" name="svbtle_options[color]" value="<?php esc_attr_e( $options['color'] ); ?>" /><div id="color_picker_color1"></div>
+						<input id="color1" class="regular-text" type="text" name="svbtle_options[color]" value="<?php echo $color ?>" /><div id="color_picker_color1"></div>
 					</td>
 				</tr>
 
@@ -78,10 +77,6 @@ function theme_options_do_page() {
 
 function theme_options_validate( $input ) {
 	global $select_options, $radio_options;
-
-	if ( ! isset( $input['anchor'] ) )
-		$input['anchor'] = null;
-	$input['anchor'] = ( $input['anchor'] == 1 ? 1 : 0 );
 	
 	if ( ! isset( $input['cover'] ) )
 		$input['cover'] = null;

@@ -1,7 +1,7 @@
 # wordpress-svbtle
 #### Svbtle.com inspired Wordpress theme
 
-First theme to have all animations and "kudos" working!
+All animations including "kudos" and mobile views work! [Demo](http://scav1.com)
 
 ## Quick Start
 Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [download the latest release](https://github.com/scavone/wordpress-svbtle/zipball/master)
@@ -14,6 +14,7 @@ Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [dow
 ## Wordpress Features
 * Uses WP customizable menus
 * Theme settings
+* Custom Post Meta box
 * Choose your own logo or pick one that is provided
 * Featured post images displayed on the index page
 * Templates for single post, pages, categories
@@ -23,16 +24,22 @@ Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [dow
 
 ![main][1]
 
-![comments][2]
+![mobile][2]
 
-![options][3]
+![comments][3]
 
-![header][4]
+![post][4]
 
- [1]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_main.png
- [2]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_comments.png
- [3]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_options.png 
- [4]: https://github.com/scavone/wordpress-svbtle/raw/master/screenshot_header.png 
+![options][5]
+
+![header][6]
+
+ [1]: http://scav1.com/images/screenshot_main.png
+ [2]: http://scav1.com/images/screenshot_mobile.png
+ [3]: http://scav1.com/images/screenshot_comments.png
+ [4]: http://scav1.com/images/screenshot_post.png
+ [5]: http://scav1.com/images/screenshot_options.png
+ [6]: http://scav1.com/images/screenshot_header.png 
 
 
 ## Bug tracker
