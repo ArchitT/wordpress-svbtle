@@ -8,13 +8,13 @@ Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [dow
 
 1. Move the folder /svbtle into wp-content/themes/
 2. Enable the theme from the admin panel
-3. Move kudos.php to the root of your Wordpress installation.
-4. Your site is ready to go!
+3. Your site is ready to go!
 
 ## Wordpress Features
 * Uses WP customizable menus
+* WP sidebar uses stylized widgets (search bar, custom menu, etc)
 * Theme settings
-* Custom Post Meta box
+* Custom Post Meta box for click thru URLs
 * Choose your own logo or pick one that is provided
 * Featured post images displayed on the index page
 * Templates for single post, pages, categories

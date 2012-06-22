@@ -48,10 +48,7 @@
   <div class="user_meta">
     <h1 id="user"><a href="<?php echo site_url(); ?>" class=""><?php bloginfo( 'name' ); ?></a></h1>
     <h2><?php bloginfo( 'description' ); ?></h2>
-    <ul id="linkbar" class="clearfix">
-			<?php wp_nav_menu(array('menu' => 'custom_menu')); ?>
-    </ul>
-<?php //get_sidebar(); ?>
+		<?php get_sidebar(); ?>
   </div>
   <a href="http://svbtle.com" class="network_link">
     Original design by <span>Svbtle</span>.

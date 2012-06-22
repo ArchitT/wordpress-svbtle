@@ -4,7 +4,8 @@ remove_action ('wp_head', 'wp_generator');
 
 function main_css()  
 {
-	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), '20120417', 'all' );
+	$version = filemtime(realpath(dirname(__FILE__)).'/style.css');
+	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
 
 	wp_enqueue_style( 'style' );
 }
@@ -319,17 +320,27 @@ function print_post_title() {
 	echo '<a href="'.$link.'" '.$class.'>'.$title.'</a>'.$anchor;
 }
 
-/*function widgets_init() {
+function widgets_init() {
 	register_sidebar(array(
 		'name' => __( 'Sidebar', 's' ),
 		'id' => 'sidebar',
-		'before_widget' => '<li>',
-		'after_widget' => '</li>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span class="hidden">',
+		'after_title' => '</span>',
 	));
 }
-add_action( 'init', 'widgets_init' );*/
+add_action( 'init', 'widgets_init' );
+
+function my_wp_nav_menu_args( $args = '' )
+{
+	$args['container'] = false;
+	$args['menu'] = 'custom_menu';
+	$args['menu_id'] = 'hidden';
+	$args['items_wrap'] = '<li id="%1$s" class="%2$s">%3$s</li>';
+	return $args;
+}
+add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 function content_nav( $nav_id ) {
 	global $wp_query;
@@ -447,4 +458,24 @@ function svbtle_comment($comment, $args, $depth) {
      </div>
 <?php
 }
+
+function send_kudos() {
+	global $wpdb;
+	$post_id = mysql_real_escape_string($_POST['article']);
+	$cooking = mysql_real_escape_string($_POST['cooking']);
+	$kudos = get_post_meta( $post_id , '_wp-svbtle-kudos', true );
+	$new_kudos = $kudos + 1;
+	add_post_meta( $post_id, '_wp-svbtle-kudos', 1, true ) or update_post_meta( $post_id, '_wp-svbtle-kudos', $new_kudos );
+	header('HTTP/1.1 200 OK');
+}
+add_action('wp_ajax_kudos', 'send_kudos');
+add_action('wp_ajax_nopriv_kudos', 'send_kudos');
+
+function search_form( $form ) {
+    $form = '<li><form role="search" method="get" id="search" action="' . home_url( '/' ) . '" >
+    <input type="text" placeholder="search..." value="' . get_search_query() . '" name="s" id="s" />
+    </form></li>';
+    return $form;
+}
+add_filter( 'get_search_form', 'search_form' );
 ?>
