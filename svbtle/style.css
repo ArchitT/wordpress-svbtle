@@ -97,7 +97,7 @@ code ol li span.pln{padding:none}
 code ol{padding-right:0;margin:0;padding:0}
 code li{padding:0;padding-top:3px;padding-bottom:5px;padding-right:0;margin:0}
 pre{border:none}
-pre code{border:none;padding-left:12px;display:block;border:1px solid #d2d2d2;background-color:#f8f8f8;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;padding-top:10px;padding-bottom:10px;min-width:500px;max-width:900px;margin-left:-30px;font-size:13px}
+pre code{border:none;padding-left:12px;display:block;border:1px solid #d2d2d2;background-color:#f8f8f8;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;padding-top:10px;padding-bottom:10px;min-width:500px;max-width:900px;margin-left:0px;font-size:13px}
 pre code ol li{border:none;margin:0;padding-top:2px;padding-bottom:2px;padding-left:10px}
 article pre code ul li,article pre code ol li{font-family:monospace,monospace;font-size:15px;line-height:16px}
 article blockquote code ol{margin-left:28px}
