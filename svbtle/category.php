@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<section id="posts">
-	<header>
-		<h3 class="date"><?php echo date(get_option('date_format')); ?></h3>
+<section id="river">
+	<header id="begin">
+		<time id="top_time"><?php echo date(get_option('date_format')); ?></time>
 	</header>
 <?php $options = get_option ( 'svbtle_options' ); ?>
 <?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
@@ -27,17 +27,17 @@
     </article>
 
 <?php while ( have_posts() ) : the_post() ?>
-		<article id="<?php the_ID(); ?>">
+		<article id="<?php the_ID(); ?>" class="post">
 			<h2>
 				<?php print_post_title() ?>
 			</h2>
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'hbd-theme' )  ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'theme' )  ); ?>
 			
 			<h1><?php //echo get_the_category_list(', '); ?></h1>
 		</article>
 <?php endwhile; ?>
-<footer id="paginate">
-	<?php content_nav( 'nav-below' ); ?>
-</footer>
+	<nav class="pagination">
+		<?php content_nav( 'nav-below' ); ?>
+	</nav>
 </section>
 <?php get_footer(); ?>

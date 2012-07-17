@@ -274,15 +274,10 @@ function theme_setup() {
 }
 
 function theme_header_style() {
-    ?><style type="text/css">
-        figure#user_logo div.logo, article a.kudos.completed div.circle div.filled, figure#cover_logo{background-image: url(<?php header_image(); ?>);}
-    </style><?php
+    ?><style type="text/css">aside#logo div a,aside.kudo.complete span.circle {background-image: url(<?php header_image(); ?>);}</style><?php
 }
 function theme_admin_header_style() {
-    ?><style type="text/css">
-        article a.kudos.completed div.circle div.filled {background-image: url(<?php header_image(); ?>)}
-        figure#user_logo div.logo, article a.kudos.completed div.circle div.filled, figure#cover_logo{background-image: url(<?php header_image(); ?>);}
-    </style><?php
+    ?><style type="text/css">aside#logo div a,aside.kudo.complete span.circle {background-image: url(<?php header_image(); ?>);}</style><?php
 }
 function theme_admin_header_image() {
    	?><div style="display:inline-block;height:50px;background-color:#000;"><img src=<?php header_image(); ?> height="50px"></div>
@@ -298,7 +293,7 @@ function print_post_title() {
 	$post_keys = array(); 
 	$post_val = array();
 	$post_keys = get_post_custom_keys($thePostID);
-
+	
 	if (!empty($post_keys)) {
 		foreach ($post_keys as $pkey) {
 			if ($pkey=='_wp_svbtle_external_url') {
@@ -307,15 +302,16 @@ function print_post_title() {
 		}
 		if (empty($post_val)) {
 			$link = $perm;
-			$class = "class=no-link";
+			$class = "class='no-link title'";
 		} else {
 			$link = $post_val[0];
-			$class = "";
-			$anchor = "<span class=anchor><a href='$perm'>&#9875;</a></span>";
+			$class = "class='title'";
+			$anchor = "<a href='$perm' class='anchor'>
+			<img src='".get_template_directory_uri()."/images/anchor_gray.svg' class='scalable'></a>";
 		}
 	} else {
 		$link = $perm;
-		$class = "class=no-link";
+		$class = "class='no-link title'";
 	}
 	echo '<a href="'.$link.'" '.$class.'>'.$title.'</a>'.$anchor;
 }
@@ -337,7 +333,8 @@ function my_wp_nav_menu_args( $args = '' )
 	$args['container'] = false;
 	$args['menu'] = 'custom_menu';
 	$args['menu_id'] = 'hidden';
-	$args['items_wrap'] = '<li id="%1$s" class="%2$s">%3$s</li>';
+	$args['link_before'] = '<span class="link_logo"><span class="link_logo_inside">X</span></span>';
+	$args['items_wrap'] = '<li class="%2$s">%3$s</li>';
 	return $args;
 }
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
@@ -345,16 +342,16 @@ add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 function content_nav( $nav_id ) {
 	global $wp_query;
 		if ( $wp_query->max_num_pages > 1 ) : ?>
-	<nav class="pagination">
 		<span class="prev"><?php previous_posts_link( '←   Newer' ); ?></span>
 		<span class="next"><?php next_posts_link( __( 'Continue   →') ); ?></span>
-  </nav>
 		<?php endif;
 }
 
 function single_content_nav( $nav_id ) {
 	?>
-	<a href="<?php echo home_url(); ?>" class="back_to_blog">←&nbsp;&nbsp;&nbsp;Back to blog</a>
+		<span class="prev">
+			<a href="<?php echo home_url(); ?>" class="back_to_blog">←&nbsp;&nbsp;&nbsp;Back to blog</a>
+		</span>
 	<?php 
 }
 
@@ -462,7 +459,6 @@ function svbtle_comment($comment, $args, $depth) {
 function send_kudos() {
 	global $wpdb;
 	$post_id = mysql_real_escape_string($_POST['article']);
-	$cooking = mysql_real_escape_string($_POST['cooking']);
 	$kudos = get_post_meta( $post_id , '_wp-svbtle-kudos', true );
 	$new_kudos = $kudos + 1;
 	add_post_meta( $post_id, '_wp-svbtle-kudos', 1, true ) or update_post_meta( $post_id, '_wp-svbtle-kudos', $new_kudos );

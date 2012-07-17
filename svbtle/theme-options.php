@@ -42,18 +42,6 @@ function theme_options_do_page() {
 
 			<table class="form-table">
 
-				<tr valign="top"><th scope="row"><?php _e( 'Display sidebar cover animation?', 'wordpress-svbtle' ); ?></th>
-					<td>
-						<input id="svbtle_options[cover]" name="svbtle_options[cover]" type="checkbox" value="1" <?php checked( '1', $options['cover'] ); ?> />
-					</td>
-				</tr>
-				
-				<tr valign="top"><th scope="row"><?php _e( 'Display logo pulse animation?', 'wordpress-svbtle' ); ?></th>
-					<td>
-						<input id="svbtle_options[pulse]" name="svbtle_options[pulse]" type="checkbox" value="1" <?php checked( '1', $options['pulse'] ); ?> />
-					</td>
-				</tr>
-				
 				<tr valign="top"><th scope="row"><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></th>
 					<td>
 						<input id="color1" class="regular-text" type="text" name="svbtle_options[color]" value="<?php echo $color ?>" /><div id="color_picker_color1"></div>
@@ -77,14 +65,6 @@ function theme_options_do_page() {
 
 function theme_options_validate( $input ) {
 	global $select_options, $radio_options;
-	
-	if ( ! isset( $input['cover'] ) )
-		$input['cover'] = null;
-	$input['cover'] = ( $input['cover'] == 1 ? 1 : 0 );
-	
-	if ( ! isset( $input['pulse'] ) )
-		$input['pulse'] = null;
-	$input['pulse'] = ( $input['pulse'] == 1 ? 1 : 0 );
 
 	$input['color'] = wp_filter_nohtml_kses( $input['color'] );
 
