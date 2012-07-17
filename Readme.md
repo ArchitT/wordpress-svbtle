@@ -3,6 +3,9 @@
 
 All animations including "kudos" and mobile views work! [Demo](http://scav1.com)
 
+##IMPORTANT
+Kudos only work in v2.5 and earlier. v3.0 does not have working kudos at this time.
+
 ## Quick Start
 Clone the repo, `git clone git@github.com:scavone/wordpress-svbtle.git`, or [download the latest release](https://github.com/scavone/wordpress-svbtle/zipball/master)
 
