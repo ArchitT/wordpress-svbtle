@@ -239,7 +239,7 @@ function startCode() {
     function(t) {
         this == t.target && n.enableFormElements(e(this))
     })
-})(jQuery),
+})(jQuery),	
 function(e) {
     function t() {
         if (o.jStorage) try {
@@ -525,4 +525,8 @@ $(function() {
     }).mouseleave(function() {
         t = setTimeout("$('#dropdown').hide();", 800)
     })
-});
+}),	$("input.pane_input, textarea.pane_input").bind("focus", function() {
+		    $("li.text_field").removeClass("active"), $(this).parent("li.text_field").addClass("active")
+		}), $("input.pane_input, textarea.pane_input").bind("blur", function() {
+		    $("li.text_field").removeClass("active"), $("li.text_field").first().addClass("active")
+		});
